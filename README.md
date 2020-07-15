@@ -1,1 +1,1 @@
-# K-means
+# K-means clustering using Octave
