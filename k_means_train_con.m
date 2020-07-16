@@ -1,5 +1,5 @@
 %clustering algorithm
-function [centroids, closest_centroids_ids, it] = k_means_train(X, K)
+function [centroids, closest_centroids_ids, it] = k_means_train_con(X, K)
     
     [m n] = size(X);
 
@@ -17,7 +17,7 @@ function [centroids, closest_centroids_ids, it] = k_means_train(X, K)
         centroids = compute_centroids(X, closest_centroids_ids, K);
       it=it+1; 
       %check convergence
-      if (check == centroids)
+      if ((check - centroids).^2<0.5)
           break;
          end
     end
